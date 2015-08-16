@@ -1,0 +1,4 @@
+94.23.217.201 - - [03/Aug/2015:05:26:39 -0500] "GET / HTTP/1.1" 200 52083 "-" "Mozilla/5.0 (Windows NT 6.1; rv:34.0) Gecko/20100101 Firefox/34.0"
+157.55.39.248 - - [03/Aug/2015:05:32:32 -0500] "GET /robots.txt HTTP/1.1" 404 1292 "-" "Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)"
+157.55.39.248 - - [03/Aug/2015:05:32:34 -0500] "GET / HTTP/1.1" 200 52083 "-" "Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)"
+66.249.75.146 - - [03/Aug/2015:08:20:50 -0500] "GET / HTTP/1.1" 200 52083 "-" "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
