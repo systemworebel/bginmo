@@ -10,16 +10,16 @@
     <link href="assets/fonts/font-awesome.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="assets/css/bootstrap-select.min.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="assets/css/jquery.slider.min.css" type="text/css">
     <link rel="stylesheet" href="assets/css/owl.carousel.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/owl.transitions.css" type="text/css">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 
     <title>Bg Inmobiliaria</title>
 
 </head>
 
-<body class="page-sub-page page-contact" id="page-top">
+<body class="page-sub-page page-about-us" id="page-top">
 <!-- Wrapper -->
 <div class="wrapper">
     <!-- Navigation -->
@@ -77,7 +77,7 @@
                         </li>
                         <li class="has-child"><a href="#">Nosotros</a>
                             <ul class="child-navigation">
-                                <li><a href="nosotros.php">Quienes somos</a></li>
+                                <li><a href="nosotros.html">Quienes somos</a></li>
                                 <!--<li><a href="proyectos.html">Masonry Listing</a></li>
                                 <li><a href="properties-listing-grid.html">Grid Listing</a></li>
                                 <li><a href="properties-listing-lines.html">Lines Listing</a></li>-->
@@ -142,136 +142,158 @@
         <div class="container">
             <ol class="breadcrumb">
                 <li><a href="index.php">Inicio</a></li>
-                <li class="active">Contacto</li>
+                <li class="active">Quienes somos</li>
             </ol>
         </div>
         <!-- end Breadcrumb -->
 
         <div class="container">
             <div class="row">
-                <!-- Contact -->
-                <div class="col-md-9 col-sm-9">
-                    <section id="agent-detail">
-                        <header><h1>Contactenos</h1></header>
-                        <section id="contact-information">
+                <!-- About Us -->
+                <div class="col-md-12 col-sm-12">
+                    <section id="about-us">
+                        <header><h1>Bg Inmobiliaria</h1></header>
+                        <section id="ceo-section" class="center">
+                            <header class="center"><div class="cite-title">Una empresa sólida para Santander</div></header>
+                            <div class="cite no-bottom-margin">Somos una empresa de servicios inmobiliarios integrales constituida en el año 2014, nuestros servicios están enfocados a la comercialización de inmuebles para vivienda, uso comercial y administración de arriendos. 
+                            </div>
+                            <hr class="divider">
+                            <a href="agent-detail.html" class="image"><img alt="" src="assets/img/agent-01.jpg"></a>
+                            <a href="agent-detail.html"><h3>Claudia Gisela Bautista</h3></a>
+                            <figure class="subtitle">Gerente</figure>
+                            <div class="background-image"><img alt="" src="assets/img/about-us-bg.jpg"></div>
+                        </section><!-- /#ceo-section -->
+                        <br>
+                        <br>
+                        <h1>Misión</h1>
+                        <div class="cite no-bottom-margin">En Grupo B&G Soluciones Inmobiliarias S.A.S tenemos como pilar brindarle a nuestros clientes las mejores soluciones y alternativas de inversión, rentabilidad y administración de sus inmuebles para lo cual contamos con un Talento humano calificado, tarifas competitivas con alto grado de responsabilidad, apoyando el desarrollo sostenible de nuestra Región.  
+                            </div>
+                             <br>
+                        <br>
+                        <h1>Visión</h1>
+                        <div class="cite no-bottom-margin">Para el 2020 Grupo B&G Soluciones Inmobiliarias S.A.S será reconocida como una empresa con tendencia vanguardista rompiendo esquemas y tradicionalismo en el sector inmobiliario, destacándose por un servicio amigable, ágil y oportuno. Seremos líderes en el mercado siendo así una de las empresas más sólidas competitivas y eficientes desarrollando un mejoramiento continuo en nuestro amplio portafolio de servicios con talento humano calificado de valores éticos intachables, enfocados hacia el servicio al cliente, apoyándonos en la implementación de herramientas de alta tecnología lo que nos permitirá posicionarnos en el mercado virtual de bienes raíces y expansión a nivel nacional.   
+                            </div>
+                        <div class="divider-image center"><img alt="" src="assets/img/sine-wave.png"></div>
+                        <section id="our-team">
+                            <header class="center"><h2 class="no-border">Nuestro Equipo</h2></header>
                             <div class="row">
-                                <div class="col-md-4 col-sm-5">
-                                    <section id="address">
-                                        <header><h3>Dirección</h3></header>
-                                        <address>
-                                            <strong>H&G Grupo Inmobiliario</strong><br>
-                                            Calle 36#35-40 El Prado<br>
-                                            Bucaramanga - Colombia
-                                        </address>
-                                       301 4057660 / 318 8217589 <br>
-                                        <a href="#">comercial@hbinmo.com</a><br>
-                                        <strong>skype: </strong>H&G Grupo Inmobiliario
-                                    </section><!-- /#address -->
-                                    <section id="social">
-                                        <header><h3>Nuestras Redes Sociales</h3></header>
-                                        <div class="agent-social">
-                                            <a href="#" class="fa fa-twitter btn btn-grey-dark"></a>
-                                            <a href="#" class="fa fa-facebook btn btn-grey-dark"></a>
-                                            <a href="#" class="fa fa-linkedin btn btn-grey-dark"></a>
+                                <div class="col-md-offset-1 col-md-5 col-sm-offset-1 col-sm-5">
+                                    <div class="member">
+                                        <a href="agent-detail.html" class="image"><img alt="" src="assets/img/client-01.jpg"></a>
+                                        <div class="tag">Gerente</div>
+                                        <div class="wrapper">
+                                            <a href="agent-detail.html"><h3>Claudia Gissela Bautista</h3></a>
+                                            <figure class="subtitle">Gerente</figure>
+                                            <dl>
+                                                <dt>Télefono:</dt>
+                                                <dd>301 4057660</dd>
+                                                <dt>Email:</dt>
+                                                <dd><a href="mailto:#">gerencia@bginmo.com</a></dd>
+                                                <dt>Skype:</dt>
+                                                <dd>bginmospkype</dd>
+                                            </dl>
                                         </div>
-                                    </section><!-- /#social -->
-                                </div><!-- /.col-md-4 -->
-                                <div class="col-md-8 col-sm-7">
-                                    <header><h3>En donde estamos?</h3></header>
-                                    <div id="contact-map"></div>
-                                </div><!-- /.col-md-8 -->
+                                    </div><!-- /.member -->
+                                </div><!-- /.col-md-5 -->
+                                <div class="col-md-5 col-sm-5">
+                                    <div class="member">
+                                        <a href="agent-detail.html" class="image"><img alt="" src="assets/img/member-01.jpg"></a>
+                                        <div class="tag">Comercial</div>
+                                        <div class="wrapper">
+                                            <a href="agent-detail.html"><h3>Ingrid</h3></a>
+                                            <figure class="subtitle">Asesora Comercial</figure>
+                                            <dl>
+                                                <dt>Télefono:</dt>
+                                                <dd>301 4057660</dd>
+                                                <dt>Email:</dt>
+                                                <dd><a href="mailto:#">gerencia@bginmo.com</a></dd>
+                                                <dt>Skype:</dt>
+                                                <dd>bginmospkype</dd>
+                                            </dl>
+                                        </div>
+                                    </div><!-- /.member -->
+                                </div><!-- /.col-md-5 -->
                             </div><!-- /.row -->
-                        </section><!-- /#agent-info -->
-                        <hr class="thick">
-                        <section id="form">
-                            <header><h3>Envíanos un mensaje</h3></header>
-                            <!--<form role="form" id="form-contact" method="post"  class="clearfix">-->
-                             <div style="border-radius:30px;background-color:#E0F2F7;height:50px;font-family:FontAwesome;display:none;text-align:center;border:4px #2E9AFE solid;" id="respuesta"></div>
-                                                        <div class="form-group">
-                                                            <label for="form-contact-agent-name">Nombre<em>*</em></label>
-                                                            <input type="text" class="form-control" id="form-contact-agent-name" name="form-contact-agent-name" required>
-                                                        </div><!-- /.form-group -->
-                                                        <div class="form-group">
-                                                            <label for="form-contact-agent-email">Email<em>*</em></label>
-                                                            <input type="email" class="form-control" id="form-contact-agent-email" name="form-contact-agent-email" required>
-                                                        </div><!-- /.form-group -->
-                                                        <div class="form-group">
-                                                            <label for="form-contact-agent-message">Mensaje<em>*</em></label>
-                                                            <textarea class="form-control" id="form-contact-agent-message" rows="5" name="form-contact-agent-message" required></textarea>
-                                                        </div><!-- /.form-group -->
-                                                        <div class="form-group">
-                                                            <button type="submit" class="btn pull-right btn-default" id="form-contact-agent-submit">Enviar</button>
-                                                        </div><!-- /.form-group -->
-                                                        <div id="form-contact-agent-status"></div>
-                                                    <!--</form>--><!-- /#form-contact -->
-                            <!--</form>--><!-- /#form-contact -->
-                        </section>
-                    </section><!-- /#agent-detail -->
-                </div><!-- /.col-md-9 -->
+                            
+                        </section><!-- /#our-tem -->
 
-                <script type="text/javascript">
-                                                    var divrespuesta=document.getElementById("respuesta");
-                                                    var divname=document.getElementById("form-contact-agent-name");
-                                                    var divemail=document.getElementById("form-contact-agent-email");
-                                                    var divmensaje=document.getElementById("form-contact-agent-message");
-                                                    var divBoton=document.getElementById("form-contact-agent-submit");
-                                                    divBoton.addEventListener("click",function(){
-                                                     var ajaxRespEnvio;
+                        <section id="fun-facts" class="block counting-numbers">
+                            <header class="center"><h2 class="no-border">Procesos Exitosos</h2></header>
+                            <div class="row">
+                                <div class="fun-facts">
+                                    <?php 
+                                    require "classConeccionBD.php";
+                                    $peticionreportes="SELECT*FROM reportesnosotros";
+                                    $reportando=mysql_query($peticionreportes);
+                                    while($filareportes=mysql_fetch_array($reportando)){
+                                        $datosreportes[0]=$filareportes['inmarrendados'];
+                                        $datosreportes[1]=$filareportes['provendidos'];
+                                        $datosreportes[2]=$filareportes['avaluos'];
+                                        $datosreportes[3]=$filareportes['consultoria'];
 
-                                                     if(window.ActiveXOBject){
-                                                      ajaxRespEnvio=new ActiveXOBject("Microsoft.XMLHTTP");
-                                                     }else if(window.XMLHttpRequest){
-                                                      ajaxRespEnvio=new XMLHttpRequest();
-                                                     }
+                                    }
+                                    echo'<div class="col-md-3">
+                                        <div class="number-wrapper">
+                                            <div class="number" data-from="1" data-to="'.$datosreportes[0].'"></div>
+                                            <figure>Inmuebles arrendados</figure>
+                                        </div><!-- /.number-wrapper -->
+                                    </div><!-- /.col-md-3 --><div class="col-md-3">
+                                        <div class="number-wrapper">
+                                            <div class="number" data-from="1" data-to="'.$datosreportes[1].'"></div>
+                                            <figure>Proyectos vendidos</figure>
+                                        </div><!-- /.number-wrapper -->
+                                    </div><!-- /.col-md-3 -->
+                                    <div class="col-md-3">
+                                        <div class="number-wrapper">
+                                            <div class="number" data-from="1" data-to="'.$datosreportes[2].'"></div>
+                                            <figure>Avaluos</figure>
+                                        </div><!-- /.number-wrapper -->
+                                    </div><!-- /.col-md-3 -->
+                                    <div class="col-md-3">
+                                    <div class="number-wrapper">
+                                            <div class="number" data-from="1" data-to="'.$datosreportes[3].'"></div>
+                                            <figure>Consultoría</figure>
+                                        </div><!-- /.number-wrapper -->';?>
 
-                                                     ajaxRespEnvio.onreadystatechange=recibiendoRespuesta;
-                                                     ajaxRespEnvio.open("GET","correo.php?nombre="+divname.value+"&email="+divemail.value+"&mensaje="+divmensaje.value,true);
-                                                     ajaxRespEnvio.send(null);
-
-                                                     function recibiendoRespuesta(){
-                                                      if(ajaxRespEnvio.readyState==4){
-                                                       divrespuesta.style.display='block';
-                                                       divrespuesta.innerHTML=ajaxRespEnvio.responseText;
-                                                       divname.value='';
-                                                       divemail.value='';
-                                                       divmensaje.value='';
-
-                                                      }else{
-                                                       divrespuesta.innerHTML="Ha ocurrido un error en el envio, intente nuevamente";
-                                                      }
-                                                     }},false);
-                                                    
-                                                    </script>
-                <!-- end Contact -->
-
-                <!-- sidebar -->
-                               <div class="col-md-3 col-sm-3">
-                    <section id="sidebar">
-                        <aside id="edit-search">
-                           
-                        </aside><!-- /#edit-search -->
-                        <aside id="featured-properties">
-                            <script type="text/javascript" src='funcionesBD.js'></script>
-                            <script type="text/javascript">
-                            objMini=new Avisos("featured-properties","2");
-                            objMini.cantEspecifica();
-                           </script>
-                        </aside><!-- /#featured-properties -->
-                        <aside id="our-guides">
-                            <!--<header><h3>Our Guides</h3></header>
-                            <a href="#" class="universal-button">
-                                <figure class="fa fa-home"></figure>
-                                <span>Buying Guide</span>
-                                <span class="arrow fa fa-angle-right"></span>
-                            </a>
-                            <a href="#" class="universal-button">
-                                <figure class="fa fa-umbrella"></figure>
-                                <span>Right Insurance for You</span>
-                                <span class="arrow fa fa-angle-right"></span>
-                            </a>-->
-                        </aside><!-- /#our-guide -->
-                    </section><!-- /#sidebar -->
-                </div><!-- /.col-md-3 -->
+                                    </div><!-- /.col-md-3 -->
+                                </div><!-- /.fun-facts -->
+                            </div><!-- /.row -->
+                        </section><!-- /#fun-facts -->
+                        <section id="testimonials" class="block">
+                            <header class="center"><h2 class="no-border">Nuestros Objetivos</h2></header>
+                              <div class="cite no-bottom-margin">Permanecer vigentes y activos en la transformación del sector inmobiliario de la ciudad.
+Generar y mantener importantes alianzas con firmas constructoras que nos permitan ofrecer alternativas de inversión sobre planos. Ofrecer a nuestros clientes un servicio integral a través del cual podamos brindar soluciones en los diferentes procesos de cierre del negocio tales como asesoría jurídica, asesoría para crédito hipotecario, Avalúos, Seguro inmobiliario. Mantener el compromiso de proteger, fortalecer y conservar el patrimonio de nuestros clientes. Prestar un servicio de administración de Inmuebles con calidad y eficiencia otorgando a nuestros clientes la tranquilidad de que su patrimonio está siendo protegido.
+Brindar soluciones a las necesidades de nuestros clientes de manera rápida y efectiva en todo lo concerniente expectativas de inversión y/o administración de su inmueble 
+                            </div>
+                            <div class="owl-carousel testimonials-carousel">
+                                <blockquote class="testimonial">
+                                    <figure>
+                                        <div class="image">
+                                            <img alt="" src="assets/img/client-01.jpg">
+                                        </div>
+                                    </figure>
+                                    <aside class="cite">
+                                        <p>Fusce risus metus, placerat in consectetur eu, porttitor a est sed sed dolor lorem cras adipiscing</p>
+                                        <footer>Natalie Jenkins</footer>
+                                    </aside>
+                                </blockquote>
+                                <blockquote class="testimonial">
+                                    <figure>
+                                        <div class="image">
+                                            <img alt="" src="assets/img/client-01.jpg">
+                                        </div>
+                                    </figure>
+                                    <aside class="cite">
+                                        <p>Fusce risus metus, placerat in consectetur eu, porttitor a est sed sed dolor lorem cras adipiscing</p>
+                                        <footer>Natalie Jenkins</footer>
+                                    </aside>
+                                </blockquote>
+                            </div><!-- /.testimonials-carousel -->
+                        </section><!-- /#testimonials -->
+                    </section><!-- /#about-us -->
+                </div><!-- /.col-md-12 -->
+                <!-- end About Us -->
+                <!-- Sidebar goes here -->
                 <!-- end Sidebar -->
             </div><!-- /.row -->
         </div><!-- /.container -->
@@ -335,30 +357,16 @@
 
 <script type="text/javascript" src="assets/js/jquery-2.1.0.min.js"></script>
 <script type="text/javascript" src="assets/js/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-<script type="text/javascript" src="assets/js/markerwithlabel_packed.js"></script>
-<script type="text/javascript" src="assets/js/infobox.js"></script>
 <script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="assets/js/smoothscroll.js"></script>
-<script type="text/javascript" src="assets/js/bootstrap-select.min.js"></script>
-<script type="text/javascript" src="assets/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
 <script type="text/javascript" src="assets/js/retina-1.1.0.min.js"></script>
-<script type="text/javascript" src="assets/js/jshashtable-2.1_src.js"></script>
-<script type="text/javascript" src="assets/js/jquery.numberformatter-1.2.3.js"></script>
-<script type="text/javascript" src="assets/js/tmpl.js"></script>
-<script type="text/javascript" src="assets/js/jquery.dependClass-0.1.js"></script>
-<script type="text/javascript" src="assets/js/draggable-0.1.js"></script>
-<script type="text/javascript" src="assets/js/jquery.slider.js"></script>
-
-<script type="text/javascript" src="assets/js/custom-map.js"></script>
+<script type="text/javascript" src="assets/js/waypoints.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.countTo.js"></script>
 <script type="text/javascript" src="assets/js/custom.js"></script>
 <!--[if gt IE 8]>
 <script type="text/javascript" src="assets/js/ie.js"></script>
 <![endif]-->
-<script>
-    _latitude = 7.1243483;
-    _longitude = -73.1103101;
-    google.maps.event.addDomListener(window, 'load', contactUsMap(_latitude,_longitude));
-</script>
+
 </body>
 </html>

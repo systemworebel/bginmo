@@ -10,19 +10,19 @@
     <link href="assets/fonts/font-awesome.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="assets/css/bootstrap-select.min.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="assets/css/jquery.slider.min.css" type="text/css">
     <link rel="stylesheet" href="assets/css/owl.carousel.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/owl.transitions.css" type="text/css">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
-
+    <script type='text/javascript' src='POOJS.js'></script>
     <title>Bg Inmobiliaria</title>
 
 </head>
 
-<body class="page-sub-page page-contact" id="page-top">
+<body class="page-homepage navigation-fixed-top page-slider page-slider-search-box" id="page-top" data-spy="scroll" data-target=".navigation" data-offset="90">
 <!-- Wrapper -->
 <div class="wrapper">
-    <!-- Navigation -->
+
     <div class="navigation">
         <div class="secondary-navigation">
             <div class="container">
@@ -53,13 +53,13 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <div class="navbar-brand nav" id="brand">
-                        <a href="index.php"><img src="assets/img/logo.jpg" alt="brand"></a>
+                    <div>
+                        <a href="index.html"><img src="assets/img/logo.jpg" alt="brand"></a>
                     </div>
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
                     <ul class="nav navbar-nav">
-                        <li class="active has-child"><a href="index.php">Inicio</a>
+                        <li class="active has-child"><a href="index.html">Inicio</a>
                             <ul class="child-navigation">
                                 <!--<li><a href="index-google-map-fullscreen.html">Google Map Full Screen</a></li>
                                 <li><a href="index-google-map-fixed-height.html">Google Map Fixed Height</a></li>
@@ -75,7 +75,7 @@
                                 <li><a href="index-slider-horizontal-search-box-floated.html">Horizontal Slider Floated Search</a></li>-->
                             </ul>
                         </li>
-                        <li class="has-child"><a href="#">Nosotros</a>
+                        <li class="has-child"><a href="nosotros.html">Nosotros</a>
                             <ul class="child-navigation">
                                 <li><a href="nosotros.php">Quienes somos</a></li>
                                 <!--<li><a href="proyectos.html">Masonry Listing</a></li>
@@ -127,7 +127,6 @@
                                 <li><a href="blog-detail.html">Blog Post Detail</a></li>
                             </ul>
                         </li>-->
-
                         <li><a href="contacto.html">Contacto</a></li>
                     </ul>
                 </nav><!-- /.navbar collapse-->
@@ -135,146 +134,188 @@
             </header><!-- /.navbar -->
         </div><!-- /.container -->
     </div><!-- /.navigation -->
-    <!-- end Navigation -->
+
+    <!-- Slider -->
+        <div id="slider" class="loading has-parallax">
+        <div id="loading-icon"><i class="fa fa-cog fa-spin"></i></div>
+        <div class="owl-carousel homepage-slider carousel-full-width">
+    <?php 
+    require "classConeccionBD.php";
+    $peticionindex="SELECT*FROM imagenes WHERE arriendoDestacado='destacado'";
+    $resultindex=mysql_query($peticionindex);
+    $l=0;
+    while($filaindex=mysql_fetch_array($resultindex)){
+     $datosindex[0][$l]=$filaindex['id'];
+     $datosindex[1][$l]=$filaindex['rutaImagen'];
+     $datosindex[2][$l]=$filaindex['precio'];
+     $datosindex[3][$l]=$filaindex['direccion'];
+     $datosindex[4][$l]=$filaindex['ciudad'];
+     $l++;
+    }
+
+    if($l<4){
+
+    }else{
+     $l=4;
+    }
+
+    for($li=0;$li<$l;$li++){
+     echo'<div class="slide">
+                <div class="container">
+                    <div class="overlay">
+                        <div class="info">
+                            <div class="tag price">$ '.$datosindex[2][$li].'</div>
+                            <h3>'.$datosindex[3][$li].'</h3>
+                            <figure>'.$datosindex[4][$li].'</figure>
+                        </div>
+                        <hr>
+                        <a href="informacion.php?idAviso='.$datosindex[0][$li].'" class="link-arrow">Leer Más</a>
+                    </div>
+                </div>
+               <img alt="" src="'.$datosindex[1][$li].'">
+            </div>';
+    }
+    ?>
+
+  </div>
+    </div>
+   
+    <!-- end Slider -->
+
     <!-- Page Content -->
     <div id="page-content">
-        <!-- Breadcrumb -->
-        <div class="container">
-            <ol class="breadcrumb">
-                <li><a href="index.php">Inicio</a></li>
-                <li class="active">Contacto</li>
-            </ol>
-        </div>
-        <!-- end Breadcrumb -->
+        <section id="banner">
+            <div class="block has-dark-background background-color-default-darker center text-banner">
+                <div class="container">
+                    <h1 class="no-bottom-margin no-border">Publique su inmueble con nosotros <a href="contacto.html" class="text-underline">Contactenos</a>!</h1>
+                </div>
+            </div>
+        </section><!-- /#banner -->
+        <section id="our-services" class="block">
+            <div class="container">
+                <header class="section-title"><h2>Nuestros Servicios</h2></header>
+                <div class="row">
+                    <div class="col-md-4 col-sm-4">
+                        <div class="feature-box equal-height">
+                            <figure class="icon"><i class="fa fa-money"></i></figure>
+                            <aside class="description">
+                                <header><h3>Ventas</h3></header>
+                                <p id='div1'>Nuestra area de Ventas está conformado por un equipo de asesores con amplia experiencia</p>
+                          
+                                <script type='text/javascript'>
+                               
+                                    var objeto2=new traerDatos('div1');
+                                    objeto2.datosTraidos();
+                                </script>
 
-        <div class="container">
-            <div class="row">
-                <!-- Contact -->
-                <div class="col-md-9 col-sm-9">
-                    <section id="agent-detail">
-                        <header><h1>Contactenos</h1></header>
-                        <section id="contact-information">
-                            <div class="row">
-                                <div class="col-md-4 col-sm-5">
-                                    <section id="address">
-                                        <header><h3>Dirección</h3></header>
-                                        <address>
-                                            <strong>H&G Grupo Inmobiliario</strong><br>
-                                            Calle 36#35-40 El Prado<br>
-                                            Bucaramanga - Colombia
-                                        </address>
-                                       301 4057660 / 318 8217589 <br>
-                                        <a href="#">comercial@hbinmo.com</a><br>
-                                        <strong>skype: </strong>H&G Grupo Inmobiliario
-                                    </section><!-- /#address -->
-                                    <section id="social">
-                                        <header><h3>Nuestras Redes Sociales</h3></header>
-                                        <div class="agent-social">
-                                            <a href="#" class="fa fa-twitter btn btn-grey-dark"></a>
-                                            <a href="#" class="fa fa-facebook btn btn-grey-dark"></a>
-                                            <a href="#" class="fa fa-linkedin btn btn-grey-dark"></a>
-                                        </div>
-                                    </section><!-- /#social -->
-                                </div><!-- /.col-md-4 -->
-                                <div class="col-md-8 col-sm-7">
-                                    <header><h3>En donde estamos?</h3></header>
-                                    <div id="contact-map"></div>
-                                </div><!-- /.col-md-8 -->
-                            </div><!-- /.row -->
-                        </section><!-- /#agent-info -->
-                        <hr class="thick">
-                        <section id="form">
-                            <header><h3>Envíanos un mensaje</h3></header>
-                            <!--<form role="form" id="form-contact" method="post"  class="clearfix">-->
-                             <div style="border-radius:30px;background-color:#E0F2F7;height:50px;font-family:FontAwesome;display:none;text-align:center;border:4px #2E9AFE solid;" id="respuesta"></div>
-                                                        <div class="form-group">
-                                                            <label for="form-contact-agent-name">Nombre<em>*</em></label>
-                                                            <input type="text" class="form-control" id="form-contact-agent-name" name="form-contact-agent-name" required>
-                                                        </div><!-- /.form-group -->
-                                                        <div class="form-group">
-                                                            <label for="form-contact-agent-email">Email<em>*</em></label>
-                                                            <input type="email" class="form-control" id="form-contact-agent-email" name="form-contact-agent-email" required>
-                                                        </div><!-- /.form-group -->
-                                                        <div class="form-group">
-                                                            <label for="form-contact-agent-message">Mensaje<em>*</em></label>
-                                                            <textarea class="form-control" id="form-contact-agent-message" rows="5" name="form-contact-agent-message" required></textarea>
-                                                        </div><!-- /.form-group -->
-                                                        <div class="form-group">
-                                                            <button type="submit" class="btn pull-right btn-default" id="form-contact-agent-submit">Enviar</button>
-                                                        </div><!-- /.form-group -->
-                                                        <div id="form-contact-agent-status"></div>
-                                                    <!--</form>--><!-- /#form-contact -->
-                            <!--</form>--><!-- /#form-contact -->
-                        </section>
-                    </section><!-- /#agent-detail -->
-                </div><!-- /.col-md-9 -->
+                                <a href="proyectos.html" class="link-arrow">Más Información</a>
+                            </aside>
+                        </div><!-- /.feature-box -->
+                    </div><!-- /.col-md-4 -->
+                    <div class="col-md-4 col-sm-4">
+                        <div class="feature-box equal-height">
+                            <figure class="icon"><i class="fa fa-users"></i></figure>
+                            <aside style='height:200px;' class="description">
+                                <header><h3>Arrendamientos</h3></header>
+                                <p id='div2'>Manejo y administración de Inmuebles tanto Comercial como de vivienda lo que le proporcionará confianza y seguridad</p>
 
-                <script type="text/javascript">
-                                                    var divrespuesta=document.getElementById("respuesta");
-                                                    var divname=document.getElementById("form-contact-agent-name");
-                                                    var divemail=document.getElementById("form-contact-agent-email");
-                                                    var divmensaje=document.getElementById("form-contact-agent-message");
-                                                    var divBoton=document.getElementById("form-contact-agent-submit");
-                                                    divBoton.addEventListener("click",function(){
-                                                     var ajaxRespEnvio;
+                            <script type='text/javascript'>
+                                    var objeto3=new traerDatos('div2');
+                                    objeto3.datosTraidos();
+                            </script>
+                                <a href="proyectos.html" class="link-arrow">Más Información</a>
+                            </aside>
+                        </div><!-- /.feature-box -->
+                    </div><!-- /.col-md-4 -->
+                    <div class="col-md-4 col-sm-4">
+                        <div class="feature-box equal-height">
+                            <figure class="icon"><i class="fa fa-folder"></i></figure>
+                            <aside class="description">
+                                <header><h3>Asesorías jurídicas y avalúos</h3></header>
+                                <p id='div3'>Asesores y Consultores Jurídicos especializados en Derecho Inmobiliario y Comercial</p>
+                            <script type='text/javascript'>
+                                    var objeto3=new traerDatos('div3','yes');
+                                    objeto3.datosTraidos();
+                            </script>
+                                <a href="proyectos.html" class="link-arrow">Más Información</a>
+                            </aside>
+                        </div><!-- /.feature-box -->
+                    </div><!-- /.col-md-4 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /#our-services -->
+        <section id="price-drop" class="block">   
+        </section><!-- /#price-drop -->
+        <script type="text/javascript" src='funcionesBD.js'></script>
+       <script type="text/javascript">
+        objMini2=new Avisos("price-drop","4",'1');
+        objMini2.cantEspecifica1();
+       </script>
+        <aside id="advertising" class="block">
+            <div class="container">
+                <a href="submit.html">
+                    <div class="banner">
+                        <div class="wrapper">
+                        <img alt="" src="assets/img/publi.png">
+                            <!--<span class="title">Do you want your property to be listed here?</span>
+                            <span class="submit">Submit it now! <i class="fa fa-plus-square"></i></span>-->
+                        </div>
+                    </div><!-- /.banner-->
+                </a>
+            </div>
+        </aside><!-- /#adveritsing-->
+        <section id="new-properties" class="block"> 
+        </section><!-- /#new-properties-->
+       <script type="text/javascript">
+        objMini3=new Avisos("new-properties","4",'2');
+        objMini3.cantEspecifica1();
+       </script>
 
-                                                     if(window.ActiveXOBject){
-                                                      ajaxRespEnvio=new ActiveXOBject("Microsoft.XMLHTTP");
-                                                     }else if(window.XMLHttpRequest){
-                                                      ajaxRespEnvio=new XMLHttpRequest();
-                                                     }
-
-                                                     ajaxRespEnvio.onreadystatechange=recibiendoRespuesta;
-                                                     ajaxRespEnvio.open("GET","correo.php?nombre="+divname.value+"&email="+divemail.value+"&mensaje="+divmensaje.value,true);
-                                                     ajaxRespEnvio.send(null);
-
-                                                     function recibiendoRespuesta(){
-                                                      if(ajaxRespEnvio.readyState==4){
-                                                       divrespuesta.style.display='block';
-                                                       divrespuesta.innerHTML=ajaxRespEnvio.responseText;
-                                                       divname.value='';
-                                                       divemail.value='';
-                                                       divmensaje.value='';
-
-                                                      }else{
-                                                       divrespuesta.innerHTML="Ha ocurrido un error en el envio, intente nuevamente";
-                                                      }
-                                                     }},false);
-                                                    
-                                                    </script>
-                <!-- end Contact -->
-
-                <!-- sidebar -->
-                               <div class="col-md-3 col-sm-3">
-                    <section id="sidebar">
-                        <aside id="edit-search">
-                           
-                        </aside><!-- /#edit-search -->
-                        <aside id="featured-properties">
-                            <script type="text/javascript" src='funcionesBD.js'></script>
-                            <script type="text/javascript">
-                            objMini=new Avisos("featured-properties","2");
-                            objMini.cantEspecifica();
-                           </script>
-                        </aside><!-- /#featured-properties -->
-                        <aside id="our-guides">
-                            <!--<header><h3>Our Guides</h3></header>
-                            <a href="#" class="universal-button">
-                                <figure class="fa fa-home"></figure>
-                                <span>Buying Guide</span>
-                                <span class="arrow fa fa-angle-right"></span>
-                            </a>
-                            <a href="#" class="universal-button">
-                                <figure class="fa fa-umbrella"></figure>
-                                <span>Right Insurance for You</span>
-                                <span class="arrow fa fa-angle-right"></span>
-                            </a>-->
-                        </aside><!-- /#our-guide -->
-                    </section><!-- /#sidebar -->
-                </div><!-- /.col-md-3 -->
-                <!-- end Sidebar -->
-            </div><!-- /.row -->
-        </div><!-- /.container -->
+        <section id="testimonials" class="block">
+            <div class="container">
+                <header class="section-title"><h2>Clientes Satisfechos</h2></header>
+                <div class="owl-carousel testimonials-carousel">
+                    <blockquote class="testimonial">
+                        <figure>
+                            <div class="image">
+                                <img alt="" src="assets/img/client-01.jpg">
+                            </div>
+                        </figure>
+                        <aside class="cite">
+                            <p id="div4"></p>
+                            <script type='text/javascript'>
+                                    var objeto3=new traerDatos('div4','yes');
+                                    objeto3.datosTraidos();
+                            </script>
+                            <footer>Natalie Jenkins</footer>
+                        </aside>
+                    </blockquote>
+                    <blockquote class="testimonial">
+                        <figure>
+                            <div class="image">
+                                <img alt="" src="assets/img/client-01.jpg">
+                            </div>
+                        </figure>
+                        <aside class="cite">
+                            <p>Fusce risus metus, placerat in consectetur eu, porttitor a est sed sed dolor lorem cras adipiscing</p>
+                            <footer>Natalia Gomez</footer>
+                        </aside>
+                    </blockquote>
+                </div><!-- /.testimonials-carousel -->
+            </div><!-- /.container -->
+        </section><!-- /#testimonials -->
+        <section id="partners" class="block">
+            <div class="container">
+                <header class="section-title"><h2>Algunos Clientes</h2></header>
+                <div class="logos">
+                    <div class="logo"><a href=""><img src="assets/img/logo-partner-01.png" alt=""></a></div>
+                    <div class="logo"><a href=""><img src="assets/img/logo-partner-02.png" alt=""></a></div>
+                    <div class="logo"><a href=""><img src="assets/img/logo-partner-03.png" alt=""></a></div>
+                    <div class="logo"><a href=""><img src="assets/img/logo-partner-04.png" alt=""></a></div>
+                    <div class="logo"><a href=""><img src="assets/img/logo-partner-05.png" alt=""></a></div>
+                </div>
+            </div><!-- /.container -->
+        </section><!-- /#partners -->
     </div>
     <!-- end Page Content -->
 <!-- Page Footer -->
@@ -307,7 +348,7 @@
                             <article>
                                 <h3>Mapa del sitio</h3>
                                 <ul class="list-unstyled list-links">
-                                    <li><a href="index.php">Inicio</a></li>
+                                    <li><a href="index.html">Inicio</a></li>
                                     <li><a href="nosotros.html">Nosotros</a></li>
                                     <li><a href="servicios.html">Servicios</a></li>
                                     <li><a href="proyectos.html">Proyectos</a></li>
@@ -333,15 +374,18 @@
     </footer>
 </div>
 
+<div id="overlay"></div>
+
 <script type="text/javascript" src="assets/js/jquery-2.1.0.min.js"></script>
 <script type="text/javascript" src="assets/js/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-<script type="text/javascript" src="assets/js/markerwithlabel_packed.js"></script>
-<script type="text/javascript" src="assets/js/infobox.js"></script>
 <script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="assets/js/smoothscroll.js"></script>
+<script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
 <script type="text/javascript" src="assets/js/bootstrap-select.min.js"></script>
 <script type="text/javascript" src="assets/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.placeholder.js"></script>
+<script type="text/javascript" src="assets/js/icheck.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.vanillabox-0.1.5.min.js"></script>
 <script type="text/javascript" src="assets/js/retina-1.1.0.min.js"></script>
 <script type="text/javascript" src="assets/js/jshashtable-2.1_src.js"></script>
 <script type="text/javascript" src="assets/js/jquery.numberformatter-1.2.3.js"></script>
@@ -349,16 +393,14 @@
 <script type="text/javascript" src="assets/js/jquery.dependClass-0.1.js"></script>
 <script type="text/javascript" src="assets/js/draggable-0.1.js"></script>
 <script type="text/javascript" src="assets/js/jquery.slider.js"></script>
-
-<script type="text/javascript" src="assets/js/custom-map.js"></script>
 <script type="text/javascript" src="assets/js/custom.js"></script>
 <!--[if gt IE 8]>
 <script type="text/javascript" src="assets/js/ie.js"></script>
 <![endif]-->
 <script>
-    _latitude = 7.1243483;
-    _longitude = -73.1103101;
-    google.maps.event.addDomListener(window, 'load', contactUsMap(_latitude,_longitude));
+    $(window).load(function(){
+        initializeOwl(false);
+    });
 </script>
 </body>
 </html>

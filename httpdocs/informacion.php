@@ -54,12 +54,12 @@
                         <span class="icon-bar"></span>
                     </button>
                     <div class="navbar-brand nav" id="brand">
-                        <a href="index.html"><img src="assets/img/logo.jpg" alt="brand"></a>
+                        <a href="index.php"><img src="assets/img/logo.jpg" alt="brand"></a>
                     </div>
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
                     <ul class="nav navbar-nav">
-                        <li class="active has-child"><a href="index.html">Inicio</a>
+                        <li class="active has-child"><a href="index.php">Inicio</a>
                             <ul class="child-navigation">
                                 <!--<li><a href="index-google-map-fullscreen.html">Google Map Full Screen</a></li>
                                 <li><a href="index-google-map-fixed-height.html">Google Map Fixed Height</a></li>
@@ -77,7 +77,7 @@
                         </li>
                         <li class="has-child"><a href="#">Nosotros</a>
                             <ul class="child-navigation">
-                                <li><a href="nosotros.html">Quienes somos</a></li>
+                                <li><a href="nosotros.php">Quienes somos</a></li>
                                 <!--<li><a href="properties-listing.html">Masonry Listing</a></li>
                                 <li><a href="properties-listing-grid.html">Grid Listing</a></li>
                                 <li><a href="properties-listing-lines.html">Lines Listing</a></li>-->
@@ -394,7 +394,7 @@ for($t=0;$t<count($arraySlider);$t++){
                             <article>
                                 <h3>Mapa del sitio</h3>
                                 <ul class="list-unstyled list-links">
-                                    <li><a href="index.html">Inicio</a></li>
+                                    <li><a href="index.php">Inicio</a></li>
                                     <li><a href="nosotros.html">Nosotros</a></li>
                                     <li><a href="servicios.html">Servicios</a></li>
                                     <li><a href="proyectos.html">Proyectos</a></li>
