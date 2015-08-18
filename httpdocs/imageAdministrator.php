@@ -74,6 +74,7 @@ $_SESSION['contrasena']='Bginmobiliaria';
 			</form>
 		</div>
 	</div><br/><br/>
+	<!--Agregando imageAdministrador.php-->
 	<!--<div><?php 
 	/*require 'classConeccionBD.php';
 	$trayendo='SELECT rutaImagen FROM imagenes WHERE id="1"';

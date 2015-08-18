@@ -186,7 +186,7 @@ while($filasObtenidas=mysql_fetch_array($paqueteRecibido)){
     $datosImagenes[18][$i]=$filasObtenidas['estrato'];
     $datosImagenes[19][$i]=$filasObtenidas['id'];
     $i++;
-}
+}//Agregando informacion.php
         if(count($datosImagenes)!=0){
         for($j=0;$j<$i;$j++){
             echo '                    <section id="property-detail">
