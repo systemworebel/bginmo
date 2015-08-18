@@ -187,6 +187,18 @@ while($filasObtenidas=mysql_fetch_array($paqueteRecibido)){
     $datosImagenes[19][$i]=$filasObtenidas['id'];
     $i++;
 }//Agregando informacion.php
+$arraySlider=array($datosImagenes[20][0],$datosImagenes[30][0],$datosImagenes[40][0],$datosImagenes[50][0]);
+$cadSlider="";
+for($t=0;$t<count($arraySlider);$t++){
+     if(strlen($arraySlider[$t])!=0){
+      $divSlider='<div class="property-slide"><a href="'.$arraySlider[$t].'" class="image-popup"><div class="overlay"><h3>Front View</h3></div><img alt="" src="'.$arraySlider[$t].'"></a></div><!-- /.property-slide -->';
+      $cadSlider=$cadSlider.$divSlider;
+     }else{
+      $cadSlider=$cadSlider.'<div><!-- /.property-carousel --></section>  ';
+      break;
+     }
+
+}
         if(count($datosImagenes)!=0){
         for($j=0;$j<$i;$j++){
             echo '                    <section id="property-detail">
@@ -202,32 +214,8 @@ while($filasObtenidas=mysql_fetch_array($paqueteRecibido)){
                                         <img alt="" src="'.$datosImagenes[0][$j].'">
                                     </a>
                                 </div><!-- /.property-slide -->
-                                 <div class="property-slide">
-                                    <a href="'.$datosImagenes[20][$j].'" class="image-popup">
-                                        <div class="overlay"><h3>Front View</h3></div>
-                                        <img alt="" src="'.$datosImagenes[20][$j].'">
-                                    </a>
-                                </div><!-- /.property-slide -->
-                                 <div class="property-slide">
-                                    <a href="'.$datosImagenes[30][$j].'" class="image-popup">
-                                        <div class="overlay"><h3>Front View</h3></div>
-                                        <img alt="" src="'.$datosImagenes[30][$j].'">
-                                    </a>
-                                </div><!-- /.property-slide -->
-                                 <div class="property-slide">
-                                    <a href="'.$datosImagenes[40][$j].'" class="image-popup">
-                                        <div class="overlay"><h3>Front View</h3></div>
-                                        <img alt="" src="'.$datosImagenes[40][$j].'">
-                                    </a>
-                                </div><!-- /.property-slide -->
-                                 <div class="property-slide">
-                                    <a href="'.$datosImagenes[50][$j].'" class="image-popup">
-                                        <div class="overlay"><h3>Front View</h3></div>
-                                        <img alt="" src="'.$datosImagenes[50][$j].'">
-                                    </a>
-                                </div><!-- /.property-slide -->
-                            </div><!-- /.property-carousel -->
-                        </section>
+                                '.$cadSlider.'
+                               
                         <div class="row">
                             <div class="col-md-4 col-sm-12">
                                 <section id="quick-summary" class="clearfix">
