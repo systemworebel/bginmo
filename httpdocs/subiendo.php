@@ -25,9 +25,9 @@ $peticionAnadir='INSERT INTO imagenes
 (rutaImagen,nombreInmueble,descripcionInmueble,caracteristicas,ubicacionGoogle,
 arriendoDestacado,ventaDestacada,ubicacion,precio,tipoInmueble,estado,area,
 alcobas,banos,parqueadero,direccion,ciudad,tipoAlquiler,estrato)
-VALUES ("'.$ruta.'","'.$nombre.'","'.$descripcion.'","'.$drccn.'","'.$crcrsttcs.'",
-"'.$arrD.'","'.$ubGoogle.'","'.$venD.'","'.$ubic.'","'.$city.'","'.$precio.'","'.$tpinmo.'","'.$std.'",
-"'.$area.'","'.$cuartos.'","'.$banos.'","'.$pqdero.'","'.$tpalq.'",
+VALUES ("'.$ruta.'","'.$nombre.'","'.$descripcion.'","'.$crcrsttcs.'","'.$ubGoogle.'",
+"'.$arrD.'","'.$venD.'","'.$ubic.'","'.$precio.'","'.$tpinmo.'","'.$std.'","'.$area.'","'.$cuartos.'",
+"'.$banos.'","'.$pqdero.'","'.$drccn.'","'.$city.'","'.$tpalq.'",
 "'.$strt.'")';
 mysql_query($peticionAnadir);
 
