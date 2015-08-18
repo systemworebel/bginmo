@@ -185,37 +185,63 @@
                         <hr class="thick">
                         <section id="form">
                             <header><h3>Envíanos un mensaje</h3></header>
-                            <form role="form" id="form-contact" method="post"  class="clearfix">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="form-contact-name">Nombre<em>*</em></label>
-                                            <input type="text" class="form-control" id="form-contact-name" name="form-contact-name" required>
-                                        </div><!-- /.form-group -->
-                                    </div><!-- /.col-md-6 -->
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="form-contact-email">Email<em>*</em></label>
-                                            <input type="email" class="form-control" id="form-contact-email" name="form-contact-email" required>
-                                        </div><!-- /.form-group -->
-                                    </div><!-- /.col-md-6 -->
-                                </div><!-- /.row -->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="form-contact-message">Mensaje<em>*</em></label>
-                                            <textarea class="form-control" id="form-contact-message" rows="8" name="form-contact-message" required></textarea>
-                                        </div><!-- /.form-group -->
-                                    </div><!-- /.col-md-12 -->
-                                </div><!-- /.row -->
-                                <div class="form-group clearfix">
-                                    <button type="submit" class="btn pull-right btn-default" id="form-contact-submit">Enviar</button>
-                                </div><!-- /.form-group -->
-                                <div id="form-status"></div>
-                            </form><!-- /#form-contact -->
+                            <!--<form role="form" id="form-contact" method="post"  class="clearfix">-->
+                             <div style="border-radius:30px;background-color:#E0F2F7;height:50px;font-family:FontAwesome;display:none;text-align:center;border:4px #2E9AFE solid;" id="respuesta"></div>
+                                                        <div class="form-group">
+                                                            <label for="form-contact-agent-name">Nombre<em>*</em></label>
+                                                            <input type="text" class="form-control" id="form-contact-agent-name" name="form-contact-agent-name" required>
+                                                        </div><!-- /.form-group -->
+                                                        <div class="form-group">
+                                                            <label for="form-contact-agent-email">Email<em>*</em></label>
+                                                            <input type="email" class="form-control" id="form-contact-agent-email" name="form-contact-agent-email" required>
+                                                        </div><!-- /.form-group -->
+                                                        <div class="form-group">
+                                                            <label for="form-contact-agent-message">Mensaje<em>*</em></label>
+                                                            <textarea class="form-control" id="form-contact-agent-message" rows="5" name="form-contact-agent-message" required></textarea>
+                                                        </div><!-- /.form-group -->
+                                                        <div class="form-group">
+                                                            <button type="submit" class="btn pull-right btn-default" id="form-contact-agent-submit">Enviar</button>
+                                                        </div><!-- /.form-group -->
+                                                        <div id="form-contact-agent-status"></div>
+                                                    <!--</form>--><!-- /#form-contact -->
+                            <!--</form>--><!-- /#form-contact -->
                         </section>
                     </section><!-- /#agent-detail -->
                 </div><!-- /.col-md-9 -->
+
+                <script type="text/javascript">
+                                                    var divrespuesta=document.getElementById("respuesta");
+                                                    var divname=document.getElementById("form-contact-agent-name");
+                                                    var divemail=document.getElementById("form-contact-agent-email");
+                                                    var divmensaje=document.getElementById("form-contact-agent-message");
+                                                    var divBoton=document.getElementById("form-contact-agent-submit");
+                                                    divBoton.addEventListener("click",function(){
+                                                     var ajaxRespEnvio;
+
+                                                     if(window.ActiveXOBject){
+                                                      ajaxRespEnvio=new ActiveXOBject("Microsoft.XMLHTTP");
+                                                     }else if(window.XMLHttpRequest){
+                                                      ajaxRespEnvio=new XMLHttpRequest();
+                                                     }
+
+                                                     ajaxRespEnvio.onreadystatechange=recibiendoRespuesta;
+                                                     ajaxRespEnvio.open("GET","correo.php?nombre="+divname.value+"&email="+divemail.value+"&mensaje="+divmensaje.value,true);
+                                                     ajaxRespEnvio.send(null);
+
+                                                     function recibiendoRespuesta(){
+                                                      if(ajaxRespEnvio.readyState==4){
+                                                       divrespuesta.style.display='block';
+                                                       divrespuesta.innerHTML=ajaxRespEnvio.responseText;
+                                                       divname.value='';
+                                                       divemail.value='';
+                                                       divmensaje.value='';
+
+                                                      }else{
+                                                       divrespuesta.innerHTML="Ha ocurrido un error en el envio, intente nuevamente";
+                                                      }
+                                                     }},false);
+                                                    
+                                                    </script>
                 <!-- end Contact -->
 
                 <!-- sidebar -->

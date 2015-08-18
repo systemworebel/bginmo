@@ -261,7 +261,8 @@ for($t=0;$t<count($arraySlider);$t++){
                                         <section class="agent-form">
                                             <div class="col-md-12 col-sm-12">
                                                 <div class="agent-form">
-                                                    <form role="form" id="form-contact-agent" method="post"  action="correo.php">
+                                                    <!--<form role="form" id="form-contact-agent" method="post"  action="correo.php">-->
+                                                        <div style="border-radius:30px;background-color:#E0F2F7;height:50px;font-family:FontAwesome;display:none;text-align:center;border:4px #2E9AFE solid;" id="respuesta"></div>
                                                         <div class="form-group">
                                                             <label for="form-contact-agent-name">Nombre<em>*</em></label>
                                                             <input type="text" class="form-control" id="form-contact-agent-name" name="form-contact-agent-name" required>
@@ -272,13 +273,13 @@ for($t=0;$t<count($arraySlider);$t++){
                                                         </div><!-- /.form-group -->
                                                         <div class="form-group">
                                                             <label for="form-contact-agent-message">Mensaje<em>*</em></label>
-                                                            <textarea class="form-control" id="form-contact-agent-message" rows="2" name="form-contact-agent-message" required></textarea>
+                                                            <textarea class="form-control" id="form-contact-agent-message" rows="5" name="form-contact-agent-message" required></textarea>
                                                         </div><!-- /.form-group -->
                                                         <div class="form-group">
                                                             <button type="submit" class="btn pull-right btn-default" id="form-contact-agent-submit">Enviar</button>
                                                         </div><!-- /.form-group -->
                                                         <div id="form-contact-agent-status"></div>
-                                                    </form><!-- /#form-contact -->
+                                                    <!--</form>--><!-- /#form-contact -->
                                                 </div><!-- /.agent-form -->
                                             </div><!-- /.col-md-5 -->
                                         </section><!-- /.agent-form -->
@@ -297,7 +298,39 @@ for($t=0;$t<count($arraySlider);$t++){
 ?>
                 </div><!-- /.col-md-9 -->
                 <!-- end Property Detail Content -->
+                                                    <script type="text/javascript">
+                                                    var divrespuesta=document.getElementById("respuesta");
+                                                    var divname=document.getElementById("form-contact-agent-name");
+                                                    var divemail=document.getElementById("form-contact-agent-email");
+                                                    var divmensaje=document.getElementById("form-contact-agent-message");
+                                                    var divBoton=document.getElementById("form-contact-agent-submit");
+                                                    divBoton.addEventListener("click",function(){
+                                                     var ajaxRespEnvio;
 
+                                                     if(window.ActiveXOBject){
+                                                      ajaxRespEnvio=new ActiveXOBject("Microsoft.XMLHTTP");
+                                                     }else if(window.XMLHttpRequest){
+                                                      ajaxRespEnvio=new XMLHttpRequest();
+                                                     }
+
+                                                     ajaxRespEnvio.onreadystatechange=recibiendoRespuesta;
+                                                     ajaxRespEnvio.open("GET","correo.php?nombre="+divname.value+"&email="+divemail.value+"&mensaje="+divmensaje.value,true);
+                                                     ajaxRespEnvio.send(null);
+
+                                                     function recibiendoRespuesta(){
+                                                      if(ajaxRespEnvio.readyState==4){
+                                                       divrespuesta.style.display='block';
+                                                       divrespuesta.innerHTML=ajaxRespEnvio.responseText;
+                                                       divname.value='';
+                                                       divemail.value='';
+                                                       divmensaje.value='';
+
+                                                      }else{
+                                                       divrespuesta.innerHTML="Ha ocurrido un error en el envio, intente nuevamente";
+                                                      }
+                                                     }},false);
+                                                    
+                                                    </script>
                 <!-- sidebar -->
                 <div class="col-md-3 col-sm-3">
                     <section id="sidebar">
