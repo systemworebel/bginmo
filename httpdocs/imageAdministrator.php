@@ -29,8 +29,8 @@ $_SESSION['contrasena']='Bginmobiliaria';
 		background-color: #d3dce3;
 		border:solid #FFF 10px;
 		width:400px;
-		height:500px;
-		top:25%;
+		height:680px;
+		top:10%;
 		left:25%;
 	}
 	</style>
@@ -65,7 +65,11 @@ $_SESSION['contrasena']='Bginmobiliaria';
 				Parqueadero: <input type='text' name='parqueadero' ></input><br/>
 				Tipo Alquiler: <input type='text' name='tipoAlquiler' ></input><br/>
 				Estrato: <input type='text' name='estrato' ></input><br/>
-				<input name='archivosubido' type='file'/><br/>
+				Subir imagen principal: <input name='archivosubido' type='file'/><br/>
+				Subir imagen secundarias: <input name='archivosubido2' type='file'/><br/>
+				Subir imagen secundarias: <input name='archivosubido3' type='file'/><br/>
+				Subir imagen secundarias: <input name='archivosubido4' type='file'/><br/>
+				Subir imagen secundarias: <input name='archivosubido5' type='file'/><br/>
 				<input type='submit' style="position:relative; left:90%;" value='Subir'/>
 			</form>
 		</div>

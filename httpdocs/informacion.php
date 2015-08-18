@@ -162,6 +162,10 @@ $paqueteRecibido=mysql_query($infoAvisos);
 $i=0;
 while($filasObtenidas=mysql_fetch_array($paqueteRecibido)){
     $datosImagenes[0][$i]=$filasObtenidas['rutaImagen'];
+    $datosImagenes[20][$i]=$filasObtenidas['rutaImagen2'];
+    $datosImagenes[30][$i]=$filasObtenidas['rutaImagen3'];
+    $datosImagenes[40][$i]=$filasObtenidas['rutaImagen4'];
+    $datosImagenes[50][$i]=$filasObtenidas['rutaImagen5'];
     $datosImagenes[1][$i]=$filasObtenidas['nombreInmueble'];
     $datosImagenes[2][$i]=$filasObtenidas['descripcionInmueble'];
     $datosImagenes[3][$i]=$filasObtenidas['caracteristicas'];
@@ -196,6 +200,30 @@ while($filasObtenidas=mysql_fetch_array($paqueteRecibido)){
                                     <a href="'.$datosImagenes[0][$j].'" class="image-popup">
                                         <div class="overlay"><h3>Front View</h3></div>
                                         <img alt="" src="'.$datosImagenes[0][$j].'">
+                                    </a>
+                                </div><!-- /.property-slide -->
+                                 <div class="property-slide">
+                                    <a href="'.$datosImagenes[20][$j].'" class="image-popup">
+                                        <div class="overlay"><h3>Front View</h3></div>
+                                        <img alt="" src="'.$datosImagenes[20][$j].'">
+                                    </a>
+                                </div><!-- /.property-slide -->
+                                 <div class="property-slide">
+                                    <a href="'.$datosImagenes[30][$j].'" class="image-popup">
+                                        <div class="overlay"><h3>Front View</h3></div>
+                                        <img alt="" src="'.$datosImagenes[30][$j].'">
+                                    </a>
+                                </div><!-- /.property-slide -->
+                                 <div class="property-slide">
+                                    <a href="'.$datosImagenes[40][$j].'" class="image-popup">
+                                        <div class="overlay"><h3>Front View</h3></div>
+                                        <img alt="" src="'.$datosImagenes[40][$j].'">
+                                    </a>
+                                </div><!-- /.property-slide -->
+                                 <div class="property-slide">
+                                    <a href="'.$datosImagenes[50][$j].'" class="image-popup">
+                                        <div class="overlay"><h3>Front View</h3></div>
+                                        <img alt="" src="'.$datosImagenes[50][$j].'">
                                     </a>
                                 </div><!-- /.property-slide -->
                             </div><!-- /.property-carousel -->
