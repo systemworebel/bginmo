@@ -54,12 +54,12 @@
                         <span class="icon-bar"></span>
                     </button>
                     <div>
-                        <a href="index.html"><img src="assets/img/logo.jpg" alt="brand"></a>
+                        <a href="index.php"><img src="assets/img/logo.jpg" alt="brand"></a>
                     </div>
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
                     <ul class="nav navbar-nav">
-                        <li class="active has-child"><a href="index.html">Inicio</a>
+                        <li class="active has-child"><a href="index.php">Inicio</a>
                             <ul class="child-navigation">
                                 <!--<li><a href="index-google-map-fullscreen.html">Google Map Full Screen</a></li>
                                 <li><a href="index-google-map-fixed-height.html">Google Map Fixed Height</a></li>
@@ -75,7 +75,7 @@
                                 <li><a href="index-slider-horizontal-search-box-floated.html">Horizontal Slider Floated Search</a></li>-->
                             </ul>
                         </li>
-                        <li class="has-child"><a href="nosotros.html">Nosotros</a>
+                        <li class="has-child"><a href="nosotros.php">Nosotros</a>
                             <ul class="child-navigation">
                                 <li><a href="nosotros.php">Quienes somos</a></li>
                                 <!--<li><a href="proyectos.html">Masonry Listing</a></li>
@@ -136,49 +136,74 @@
     </div><!-- /.navigation -->
 
     <!-- Slider -->
-        <div id="slider" class="loading has-parallax">
-        <div id="loading-icon"><i class="fa fa-cog fa-spin"></i></div>
-        <div class="owl-carousel homepage-slider carousel-full-width">
+
     <?php 
     require "classConeccionBD.php";
-    $peticionindex="SELECT*FROM imagenes WHERE arriendoDestacado='destacado'";
+    $peticionindex="SELECT*FROM imagenes WHERE slider LIKE '%assets%' ORDER BY id DESC";
     $resultindex=mysql_query($peticionindex);
     $l=0;
     while($filaindex=mysql_fetch_array($resultindex)){
+
      $datosindex[0][$l]=$filaindex['id'];
-     $datosindex[1][$l]=$filaindex['rutaImagen'];
+     $datosindex[1][$l]=$filaindex['slider'];
      $datosindex[2][$l]=$filaindex['precio'];
      $datosindex[3][$l]=$filaindex['direccion'];
      $datosindex[4][$l]=$filaindex['ciudad'];
      $l++;
     }
 
-    if($l<4){
+$l=0;
 
-    }else{
-     $l=4;
-    }
-
-    for($li=0;$li<$l;$li++){
-     echo'<div class="slide">
+     echo'        <div id="slider" class="loading has-parallax">
+        <div id="loading-icon"><i class="fa fa-cog fa-spin"></i></div>
+        <div class="owl-carousel homepage-slider carousel-full-width">
+        <div class="slide">
                 <div class="container">
                     <div class="overlay">
                         <div class="info">
-                            <div class="tag price">$ '.$datosindex[2][$li].'</div>
-                            <h3>'.$datosindex[3][$li].'</h3>
-                            <figure>'.$datosindex[4][$li].'</figure>
+                            <div style="margin:auto;" class="tag price">$ '.number_format($datosindex[2][$l]).'</div>
+                            <h3>'.$datosindex[3][$l].'</h3>
+                            <figure>'.$datosindex[4][$l].'</figure>
                         </div>
                         <hr>
-                        <a href="informacion.php?idAviso='.$datosindex[0][$li].'" class="link-arrow">Leer Más</a>
+                        <a href="informacion.php?idAviso='.$datosindex[0][$l].'" class="link-arrow">Leer Más</a>
                     </div>
                 </div>
-               <img alt="" src="'.$datosindex[1][$li].'">
-            </div>';
-    }
+               <img alt="" style="margin:auto;" src="'.$datosindex[1][$l].'">
+            </div>
+            <div class="slide">
+                <div class="container">
+                    <div class="overlay">
+                        <div class="info">
+                            <div style="margin:auto;" class="tag price">$ '.number_format($datosindex[2][$l+1]).'</div>
+                            <h3>'.$datosindex[3][$l+1].'</h3>
+                            <figure>'.$datosindex[4][$l+1].'</figure>
+                        </div>
+                        <hr>
+                        <a href="informacion.php?idAviso='.$datosindex[0][$l+1].'" class="link-arrow">Leer Más</a>
+                    </div>
+                </div>
+               <img alt="" style="margin:auto;" src="'.$datosindex[1][$l+1].'">
+            </div>
+            <div class="slide">
+                <div class="container">
+                    <div class="overlay">
+                        <div class="info">
+                            <div style="margin:auto;" class="tag price">$ '.number_format($datosindex[2][$l+2]).'</div>
+                            <h3>'.$datosindex[3][$l+2].'</h3>
+                            <figure>'.$datosindex[4][$l+2].'</figure>
+                        </div>
+                        <hr>
+                        <a href="informacion.php?idAviso='.$datosindex[0][$l+2].'" class="link-arrow">Leer Más</a>
+                    </div>
+                </div>
+               <img alt="" style="margin:auto;" src="'.$datosindex[1][$l+2].'">
+            </div>
+  </div>
+    </div>';
+
     ?>
 
-  </div>
-    </div>
    
     <!-- end Slider -->
 
@@ -201,13 +226,6 @@
                             <aside class="description">
                                 <header><h3>Ventas</h3></header>
                                 <p id='div1'>Nuestra area de Ventas está conformado por un equipo de asesores con amplia experiencia</p>
-                          
-                                <script type='text/javascript'>
-                               
-                                    var objeto2=new traerDatos('div1');
-                                    objeto2.datosTraidos();
-                                </script>
-
                                 <a href="proyectos.html" class="link-arrow">Más Información</a>
                             </aside>
                         </div><!-- /.feature-box -->
@@ -218,11 +236,6 @@
                             <aside style='height:200px;' class="description">
                                 <header><h3>Arrendamientos</h3></header>
                                 <p id='div2'>Manejo y administración de Inmuebles tanto Comercial como de vivienda lo que le proporcionará confianza y seguridad</p>
-
-                            <script type='text/javascript'>
-                                    var objeto3=new traerDatos('div2');
-                                    objeto3.datosTraidos();
-                            </script>
                                 <a href="proyectos.html" class="link-arrow">Más Información</a>
                             </aside>
                         </div><!-- /.feature-box -->
@@ -233,10 +246,6 @@
                             <aside class="description">
                                 <header><h3>Asesorías jurídicas y avalúos</h3></header>
                                 <p id='div3'>Asesores y Consultores Jurídicos especializados en Derecho Inmobiliario y Comercial</p>
-                            <script type='text/javascript'>
-                                    var objeto3=new traerDatos('div3','yes');
-                                    objeto3.datosTraidos();
-                            </script>
                                 <a href="proyectos.html" class="link-arrow">Más Información</a>
                             </aside>
                         </div><!-- /.feature-box -->
@@ -270,7 +279,21 @@
         objMini3=new Avisos("new-properties","4",'2');
         objMini3.cantEspecifica1();
        </script>
+       <?php
+       
+       $peticionimg="SELECT*FROM contenedoresHtml WHERE idTag='div4'";
+       $resultadoimg=mysql_query($peticionimg);
+       while($filaimg=mysql_fetch_array($resultadoimg)){
+        $rutaimg=$filaimg["imagenTag"];
+       }
+       
+       $peticionimg2="SELECT*FROM contenedoresHtml WHERE idTag='div6'";
+       $resultadoimg2=mysql_query($peticionimg2);
+       while($filaimg2=mysql_fetch_array($resultadoimg2)){
+        $rutaimg2=$filaimg2["imagenTag"];
+       }
 
+       ?>
         <section id="testimonials" class="block">
             <div class="container">
                 <header class="section-title"><h2>Clientes Satisfechos</h2></header>
@@ -278,7 +301,7 @@
                     <blockquote class="testimonial">
                         <figure>
                             <div class="image">
-                                <img alt="" src="assets/img/client-01.jpg">
+                                <img alt="" src="<?php echo $rutaimg;?>">
                             </div>
                         </figure>
                         <aside class="cite">
@@ -287,18 +310,30 @@
                                     var objeto3=new traerDatos('div4','yes');
                                     objeto3.datosTraidos();
                             </script>
-                            <footer>Natalie Jenkins</footer>
+                            <footer id="div5">Natalie Jenkins</footer>
+                             <script type='text/javascript'>
+                                    var objeto3=new traerDatos('div5','yes');
+                                    objeto3.datosTraidos();
+                            </script>
                         </aside>
                     </blockquote>
                     <blockquote class="testimonial">
                         <figure>
                             <div class="image">
-                                <img alt="" src="assets/img/client-01.jpg">
+                                <img alt="" src="<?php echo $rutaimg2;?>">
                             </div>
                         </figure>
                         <aside class="cite">
-                            <p>Fusce risus metus, placerat in consectetur eu, porttitor a est sed sed dolor lorem cras adipiscing</p>
-                            <footer>Natalia Gomez</footer>
+                            <p id="div6">Fusce risus metus, placerat in consectetur eu, porttitor a est sed sed dolor lorem cras adipiscing</p>
+                                    <script type='text/javascript'>
+                                    var objeto3=new traerDatos('div6','yes');
+                                    objeto3.datosTraidos();
+                            </script>
+                            <footer id="div7">Natalia Gomez</footer>
+                               <script type='text/javascript'>
+                                    var objeto3=new traerDatos('div7','yes');
+                                    objeto3.datosTraidos();
+                            </script>
                         </aside>
                     </blockquote>
                 </div><!-- /.testimonials-carousel -->
@@ -348,8 +383,8 @@
                             <article>
                                 <h3>Mapa del sitio</h3>
                                 <ul class="list-unstyled list-links">
-                                    <li><a href="index.html">Inicio</a></li>
-                                    <li><a href="nosotros.html">Nosotros</a></li>
+                                    <li><a href="index.php">Inicio</a></li>
+                                    <li><a href="nosotros.php">Nosotros</a></li>
                                     <li><a href="servicios.html">Servicios</a></li>
                                     <li><a href="proyectos.html">Proyectos</a></li>
                                     <li><a href="contacto.html">Contacto</a></li>

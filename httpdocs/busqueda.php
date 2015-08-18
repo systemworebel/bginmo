@@ -1,4 +1,12 @@
 <?php
+session_start();
+if($_SESSION['correo']=='admin@bginmo.com' and $_SESSION['contrasena']=='Bginmobiliaria'){
+echo 'Has iniciado Sesion:'.$_SESSION['correo'].'<br/>';
+$_SESSION['correo']='admin@bginmo.com';
+$_SESSION['contrasena']='Bginmobiliaria';
+}else{
+		header("Location: http://localhost/bginmo/httpdocs/ingreso.html");
+}
 require 'classConeccionBD.php';
 $valorIng=$_GET['valorIng'];
 if($valorIng!=''){

@@ -42,9 +42,19 @@ $_SESSION['contrasena']='Bginmobiliaria';
 	</script>
 </head>
 <body>
-	<a href="../Admin/indexadmin.html">ModificarTextos</a><br/>
-	<a href="cerrarSesion.php">Cerrar Sesión</a><br/>
-	<a href="javascript:emergente('visible');">Agregar Imagen</a>
+	<a href="cerrarSesion.php">Cerrar Sesión</a><br/><br/>
+	<a href="clientesatisfecho.php">Agregar Cliente Satisfecho</a><br/>
+	<a href="mostrarcorreo.php">Mensajes Recibidos</a><br/>
+	<a href="javascript:emergente('visible');">Agregar Imagen</a><br/>
+<div style="background-color:#A9F5BC;width:300px;height:130px;text-align:justify;">
+	<form action="ajustandoreportes.php" method="post">
+		Inmuebles Arrendados: <input type="text" name="inmarrendados"></input><br/>
+		&nbsp; &nbsp; Proyectos Vendidos: <input type="text" name="provendidos"></input><br/>
+		&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;Cantidad Avaluos: <input type="text" name="avaluos"></input><br/>
+		&nbsp; Cantidad Consultoria: <input type="text" name="consultoria"></input><br/><br/>
+		<input type="submit" style="position:relative; left:80%;"></input><br/>
+	</form>
+</div>
 	<div id='bgVentana'>
 		<div id='ventana'>
 			<a href="javascript:emergente('hidden');">Cerrar Ventana</a><br/><br/>
@@ -70,6 +80,7 @@ $_SESSION['contrasena']='Bginmobiliaria';
 				Subir imagen secundarias: <input name='archivosubido[]' type='file'/><br/>
 				Subir imagen secundarias: <input name='archivosubido[]' type='file'/><br/>
 				Subir imagen secundarias: <input name='archivosubido[]' type='file'/><br/>
+				Slider: <input name='archivosubido[]' type='file'/><br/>
 				<input type='submit' style="position:relative; left:90%;" value='Subir'/>
 			</form>
 		</div>

@@ -1,4 +1,12 @@
 <?php
+session_start();
+if($_SESSION['correo']=='admin@bginmo.com' and $_SESSION['contrasena']=='Bginmobiliaria'){
+echo 'Has iniciado Sesion:'.$_SESSION['correo'].'<br/>';
+$_SESSION['correo']='admin@bginmo.com';
+$_SESSION['contrasena']='Bginmobiliaria';
+}else{
+		header("Location: http://localhost/bginmo/httpdocs/ingreso.html");
+}
 require 'classConeccionBD.php';
 $nombre=$_POST['nombreInmueble'];
 $descripcion=$_POST['descripcionInmueble'];
@@ -35,11 +43,11 @@ if($banderaPrincipal=='si'){
 $peticionAnadir='INSERT INTO imagenes 
 (rutaImagen,rutaImagen2,rutaImagen3,rutaImagen4,rutaImagen5,nombreInmueble,descripcionInmueble,caracteristicas,ubicacionGoogle,
 arriendoDestacado,ventaDestacada,ubicacion,precio,tipoInmueble,estado,area,
-alcobas,banos,parqueadero,direccion,ciudad,tipoAlquiler,estrato)
+alcobas,banos,parqueadero,direccion,ciudad,tipoAlquiler,estrato,slider)
 VALUES ("'.$rutaFinal[1].'","'.$rutaFinal[2].'","'.$rutaFinal[3].'","'.$rutaFinal[4].'","'.$rutaFinal[5].'","'.$nombre.'","'.$descripcion.'","'.$crcrsttcs.'","'.$ubGoogle.'",
 "'.$arrD.'","'.$venD.'","'.$ubic.'","'.$precio.'","'.$tpinmo.'","'.$std.'","'.$area.'","'.$cuartos.'",
 "'.$banos.'","'.$pqdero.'","'.$drccn.'","'.$city.'","'.$tpalq.'",
-"'.$strt.'")';
+"'.$strt.'","'.$rutaFinal[6].'")';
 mysql_query($peticionAnadir);
 echo 'Sus imagenes ya se encuentran el servidor dedicado, y en su base de datos';
 } else{

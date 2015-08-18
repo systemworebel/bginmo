@@ -77,7 +77,7 @@
                         </li>
                         <li class="has-child"><a href="#">Nosotros</a>
                             <ul class="child-navigation">
-                                <li><a href="nosotros.html">Quienes somos</a></li>
+                                <li><a href="nosotros.php">Quienes somos</a></li>
                                 <!--<li><a href="proyectos.html">Masonry Listing</a></li>
                                 <li><a href="properties-listing-grid.html">Grid Listing</a></li>
                                 <li><a href="properties-listing-lines.html">Lines Listing</a></li>-->
@@ -330,7 +330,7 @@ Brindar soluciones a las necesidades de nuestros clientes de manera rápida y ef
                                 <h3>Mapa del sitio</h3>
                                 <ul class="list-unstyled list-links">
                                     <li><a href="index.php">Inicio</a></li>
-                                    <li><a href="nosotros.html">Nosotros</a></li>
+                                    <li><a href="nosotros.php">Nosotros</a></li>
                                     <li><a href="servicios.html">Servicios</a></li>
                                     <li><a href="proyectos.html">Proyectos</a></li>
                                     <li><a href="contacto.html">Contacto</a></li>
