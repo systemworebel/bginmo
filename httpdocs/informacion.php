@@ -54,7 +54,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <div class="navbar-brand nav" id="brand">
-                        <a href="index.html"><img src="assets/img/logo.png" alt="brand"></a>
+                        <a href="index.html"><img src="assets/img/logo.jpg" alt="brand"></a>
                     </div>
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
@@ -131,9 +131,6 @@
                         <li><a href="contacto.html">Contacto</a></li>
                     </ul>
                 </nav><!-- /.navbar collapse-->
-                <div class="add-your-property">
-                    <a href="submit.html" class="btn btn-default"><i class="fa fa-plus"></i><span class="text">Add Your Property</span></a>
-                </div>
             </header><!-- /.navbar -->
         </div><!-- /.container -->
     </div><!-- /.navigation -->
@@ -194,7 +191,6 @@ for($t=0;$t<count($arraySlider);$t++){
       $divSlider='<div class="property-slide"><a href="'.$arraySlider[$t].'" class="image-popup"><div class="overlay"><h3>Front View</h3></div><img alt="" src="'.$arraySlider[$t].'"></a></div><!-- /.property-slide -->';
       $cadSlider=$cadSlider.$divSlider;
      }else{
-      $cadSlider=$cadSlider.'<div><!-- /.property-carousel --></section>  ';
       break;
      }
 
@@ -211,11 +207,11 @@ for($t=0;$t<count($arraySlider);$t++){
                                 <div class="property-slide">
                                     <a href="'.$datosImagenes[0][$j].'" class="image-popup">
                                         <div class="overlay"><h3>Front View</h3></div>
-                                        <img alt="" src="'.$datosImagenes[0][$j].'">
+                                        <img  alt="" src="'.$datosImagenes[0][$j].'">
                                     </a>
                                 </div><!-- /.property-slide -->
                                 '.$cadSlider.'
-                               
+                               <div><!-- /.property-carousel --></section>  
                         <div class="row">
                             <div class="col-md-4 col-sm-12">
                                 <section id="quick-summary" class="clearfix">
@@ -224,7 +220,7 @@ for($t=0;$t<count($arraySlider);$t++){
                                         <dt>Ubicación</dt>
                                             <dd>'.$datosImagenes[7][$j].'</dd>
                                         <dt>Precio</dt>
-                                            <dd><span class="tag price">$'.$datosImagenes[8][$j].'</span></dd>
+                                            <dd><span class="tag price">$'.number_format($datosImagenes[8][$j]).'</span></dd>
                                         <dt>Tipo de Inmueble:</dt>
                                             <dd>'.$datosImagenes[9][$j].'</dd>
                                         <dt>Estado:</dt>
@@ -252,7 +248,7 @@ for($t=0;$t<count($arraySlider);$t++){
                                 <section id="floor-plans">
                                 </section><!-- /#floor-plans -->
                                 <section id="property-map">
-                                    <header><h2>Mapa</h2></header>
+                                    <header><h2>B&G se encuentra en: </h2></header>
                                     <div class="property-detail-map-wrapper">
                                         <div class="property-detail-map" id="property-detail-map"></div>
                                     </div>
@@ -352,35 +348,6 @@ for($t=0;$t<count($arraySlider);$t++){
                         </div><!-- /.col-sm-3 -->
                         <div class="col-md-3 col-sm-3">
                             <article>
-                                <h3>Proyectos Recientes</h3>
-                                <div class="property small">
-                                    <a href="property-detail.html">
-                                        <div class="property-image">
-                                            <img alt="" src="assets/img/properties/property-06.jpg">
-                                        </div>
-                                    </a>
-                                    <div class="info">
-                                        <a href="property-detail.html"><h4>2186 Rinehart Road</h4></a>
-                                        <figure>Doral, FL 33178 </figure>
-                                        <div class="tag price">$ 72,000</div>
-                                    </div>
-                                </div><!-- /.property -->
-                                <div class="property small">
-                                    <a href="property-detail.html">
-                                        <div class="property-image">
-                                            <img alt="" src="assets/img/properties/property-09.jpg">
-                                        </div>
-                                    </a>
-                                    <div class="info">
-                                        <a href="property-detail.html"><h4>2479 Murphy Court</h4></a>
-                                        <figure>Minneapolis, MN 55402</figure>
-                                        <div class="tag price">$ 36,000</div>
-                                    </div>
-                                </div><!-- /.property -->
-                            </article>
-                        </div><!-- /.col-sm-3 -->
-                        <div class="col-md-3 col-sm-3">
-                            <article>
                                 <h3>Contacto</h3>
                                 <address>
                                     <strong>BG INMOBILIARIA</strong><br>
@@ -394,14 +361,17 @@ for($t=0;$t<count($arraySlider);$t++){
                             <article>
                                 <h3>Mapa del sitio</h3>
                                 <ul class="list-unstyled list-links">
-                                    <li><a href="#">Inicio</a></li>
-                                    <li><a href="#">Nosotros</a></li>
-                                    <li><a href="#">Servicios</a></li>
-                                    <li><a href="#">Proyectos</a></li>
-                                    <li><a href="#">Noticias</a></li>
-                                    <li><a href="#">Terminos y condiciones</a></li>
+                                    <li><a href="index.html">Inicio</a></li>
+                                    <li><a href="nosotros.html">Nosotros</a></li>
+                                    <li><a href="servicios.html">Servicios</a></li>
+                                    <li><a href="proyectos.html">Proyectos</a></li>
+                                    <li><a href="contacto.html">Contacto</a></li>
+                                    <li><a href="terminoscondiciones.html">Terminos y condiciones</a></li>
                                 </ul>
                             </article>
+                        </div><!-- /.col-sm-3 -->
+                       <div class="col-md-3 col-sm-3">
+                        <img style="float:left;" alt="" src="assets/img/logo3.jpg"></img>
                         </div><!-- /.col-sm-3 -->
                     </div><!-- /.row -->
                 </div><!-- /.container -->

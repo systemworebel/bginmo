@@ -65,16 +65,16 @@ $_SESSION['contrasena']='Bginmobiliaria';
 				Parqueadero: <input type='text' name='parqueadero' ></input><br/>
 				Tipo Alquiler: <input type='text' name='tipoAlquiler' ></input><br/>
 				Estrato: <input type='text' name='estrato' ></input><br/>
-				Subir imagen principal: <input name='archivosubido' type='file'/><br/>
-				Subir imagen secundarias: <input name='archivosubido2' type='file'/><br/>
-				Subir imagen secundarias: <input name='archivosubido3' type='file'/><br/>
-				Subir imagen secundarias: <input name='archivosubido4' type='file'/><br/>
-				Subir imagen secundarias: <input name='archivosubido5' type='file'/><br/>
+				Subir imagen principal: <input name='archivosubido[]' type='file'/><br/>
+				Subir imagen secundarias: <input name='archivosubido[]' type='file'/><br/>
+				Subir imagen secundarias: <input name='archivosubido[]' type='file'/><br/>
+				Subir imagen secundarias: <input name='archivosubido[]' type='file'/><br/>
+				Subir imagen secundarias: <input name='archivosubido[]' type='file'/><br/>
 				<input type='submit' style="position:relative; left:90%;" value='Subir'/>
 			</form>
 		</div>
 	</div><br/><br/>
-	<!--Agregando imageAdministrador.php-->
+	<!--Agregando imageAdministrator-->
 	<!--<div><?php 
 	/*require 'classConeccionBD.php';
 	$trayendo='SELECT rutaImagen FROM imagenes WHERE id="1"';

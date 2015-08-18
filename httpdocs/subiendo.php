@@ -19,38 +19,29 @@ $strt=$_POST['estrato'];
 $ubic=$city.' '.$drccn;
 $ubGoogle='nada';
 $banderaPrincipal='no';
-$ruta='assets/imgavisos'.basename($_FILES['archivosubido']['name']);
-if(move_uploaded_file($_FILES['archivosubido']['tmp_name'], $ruta)) { 
-echo "El archivo ". basename( $_FILES['archivosubido']['name']). " ha sido subido";
-$banderaPrincipal='si';}
-
-$ruta2='assets/imgavisos'.basename($_FILES['archivosubido2']['name']);
-if(move_uploaded_file($_FILES['archivosubido2']['tmp_name'], $ruta)) { 
-echo "El archivo ". basename( $_FILES['archivosubido2']['name']). " ha sido subido";}
-
-$ruta3='assets/imgavisos'.basename($_FILES['archivosubido3']['name']);
-if(move_uploaded_file($_FILES['archivosubido3']['tmp_name'], $ruta)) { 
-echo "El archivo ". basename( $_FILES['archivosubido3']['name']). " ha sido subido";}
-
-$ruta4='assets/imgavisos'.basename($_FILES['archivosubido4']['name']);
-if(move_uploaded_file($_FILES['archivosubido4']['tmp_name'], $ruta)) { 
-echo "El archivo ". basename( $_FILES['archivosubido4']['name']). " ha sido subido";}
-
-$ruta5='assets/imgavisos'.basename($_FILES['archivosubido5']['name']);
-if(move_uploaded_file($_FILES['archivosubido5']['tmp_name'], $ruta)) { 
-echo "El archivo ". basename( $_FILES['archivosubido5']['name']). " ha sido subido";}
+$ruta='assets/imgavisos/';
+for($i=0;$i<count($_FILES["archivosubido"]["name"]);$i++){
+	$origen=$_FILES["archivosubido"]["tmp_name"][$i];
+	$destino=$ruta.$_FILES["archivosubido"]["name"][$i];
+	if(move_uploaded_file($origen, $destino)){
+		$rutaFinal[$i+1]=$destino;
+		$banderaPrincipal='si';
+	}else{
+		echo 'El archivo: '.$_FILES['archivosubido']['name'][$i].' no se pudo subir al servidor<br/>';
+	}
+}
 
 if($banderaPrincipal=='si'){
 $peticionAnadir='INSERT INTO imagenes 
 (rutaImagen,rutaImagen2,rutaImagen3,rutaImagen4,rutaImagen5,nombreInmueble,descripcionInmueble,caracteristicas,ubicacionGoogle,
 arriendoDestacado,ventaDestacada,ubicacion,precio,tipoInmueble,estado,area,
 alcobas,banos,parqueadero,direccion,ciudad,tipoAlquiler,estrato)
-VALUES ("'.$ruta.'","'.$ruta2.'","'.$ruta3.'","'.$ruta4.'","'.$ruta5.'","'.$nombre.'","'.$descripcion.'","'.$crcrsttcs.'","'.$ubGoogle.'",
+VALUES ("'.$rutaFinal[1].'","'.$rutaFinal[2].'","'.$rutaFinal[3].'","'.$rutaFinal[4].'","'.$rutaFinal[5].'","'.$nombre.'","'.$descripcion.'","'.$crcrsttcs.'","'.$ubGoogle.'",
 "'.$arrD.'","'.$venD.'","'.$ubic.'","'.$precio.'","'.$tpinmo.'","'.$std.'","'.$area.'","'.$cuartos.'",
 "'.$banos.'","'.$pqdero.'","'.$drccn.'","'.$city.'","'.$tpalq.'",
 "'.$strt.'")';
 mysql_query($peticionAnadir);
-
+echo 'Sus imagenes ya se encuentran el servidor dedicado, y en su base de datos';
 } else{
 echo "Ha ocurrido un error, Intente de nuevo!";
 }

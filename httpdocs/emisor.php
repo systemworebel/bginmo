@@ -40,7 +40,7 @@ while($filasObtenidas=mysql_fetch_array($paqueteRecibido)){
                                         <figure class="type" title="Apartment"><img src="assets/img/property-types/apartment.png"  alt=""></figure>
                                         <div class="overlay">
                                             <div class="info">
-                                                <div class="tag price">'.$datosImagenes[8][$j].'</div>
+                                                <div class="tag price">'.'$'.number_format($datosImagenes[8][$j]).'</div>
                                             </div>
                                         </div>
                                         <img alt="" src="'.$datosImagenes[0][$j].'">
@@ -56,7 +56,7 @@ while($filasObtenidas=mysql_fetch_array($paqueteRecibido)){
                                         <dt>Estado:</dt>
                                         <dd>'.$datosImagenes[10][$j].'</dd>
                                         <dt>Area:</dt>
-                                        <dd>'.$datosImagenes[11][$j].'<sup>2</sup></dd>
+                                        <dd>'.$datosImagenes[11][$j].' m<sup>2</sup></dd>
                                         <dt>Alcobas:</dt>
                                         <dd>'.$datosImagenes[12][$j].'</dd>
                                         <dt>Baños:</dt>
@@ -103,7 +103,7 @@ if($k>=$cantd){
 }
 		$cad='<header><h3>Proyectos Destacados</h3></header>';
 		for($w=0;$w<$limite;$w++){
-			$cad=$cad.'<div class="property small"><a href="informacion.php?idAviso='.$destRec[19][$w].'"><div class="property-image"><img alt="" src="'.$destRec[0][$w].'"></div></a><div class="info"><a href="informacion.php?idAviso='.$destRec[19][$w].'"><h4>'.$destRec[16][$w].'</h4></a><figure>'.$destRec[15][$w].'</figure><div class="tag price">$ '.$destRec[8][$w].'</div></div></div><!-- /.property -->';
+			$cad=$cad.'<div class="property small"><a href="informacion.php?idAviso='.$destRec[19][$w].'"><div class="property-image"><img alt="" src="'.$destRec[0][$w].'"></div></a><div class="info"><a href="informacion.php?idAviso='.$destRec[19][$w].'"><h4>'.$destRec[16][$w].'</h4></a><figure>'.$destRec[15][$w].'</figure><div class="tag price">$ '.number_format($destRec[8][$w]).'</div></div></div><!-- /.property -->';
 		}
 	echo $cad;
 }elseif($tipo=='1' or $tipo=='2'){
@@ -149,7 +149,7 @@ if($k>=$cantd){
 }
 	$cad=' 	<div class="container"><header class="section-title"><h2>'.$titulo.'</h2><a href="proyectos.html" class="link-arrow">Ver todos</a></header><div class="row">';
 	for($w=0;$w<$limite;$w++){
-	$cad=$cad.'<div class="col-md-3 col-sm-6"><div class="property"><a href="informacion.php?idAviso='.$destRec[19][$w].'"><div class="property-image"><img alt="" src="'.$destRec[0][$w].'"></div><div class="overlay"><div class="info"><div class="tag price">$ '.$destRec[8][$w].'</div><h3>'.$destRec[16][$w].'</h3><figure>'.$destRec[15][$w].'</figure></div><ul class="additional-info"><li><header>Area:</header><figure>'.$destRec[11][$w].'<sup>2</sup></figure></li><li><header>Alcobas:</header><figure>'.$destRec[12][$w].'</figure></li><li><header>Baños:</header><figure>'.$destRec[13][$w].'</figure></li><li><header>Parqueaderos:</header><figure>'.$destRec[14][$w].'</figure></li></ul></div></a></div><!-- /.property --></div><!-- /.col-md-3 -->';
+	$cad=$cad.'<div class="col-md-3 col-sm-6"><div class="property"><a href="informacion.php?idAviso='.$destRec[19][$w].'"><div class="property-image"><img alt="" src="'.$destRec[0][$w].'"></div><div class="overlay"><div class="info"><div class="tag price">$ '.number_format($destRec[8][$w]).'</div><h3>'.$destRec[16][$w].'</h3><figure>'.$destRec[15][$w].'</figure></div><ul class="additional-info"><li><header>Area:</header><figure>'.$destRec[11][$w].'<sup>2</sup></figure></li><li><header>Alcobas:</header><figure>'.$destRec[12][$w].'</figure></li><li><header>Baños:</header><figure>'.$destRec[13][$w].'</figure></li><li><header>Parqueaderos:</header><figure>'.$destRec[14][$w].'</figure></li></ul></div></a></div><!-- /.property --></div><!-- /.col-md-3 -->';
 		}
 	echo $cad.'</div><!-- /.row--></div><!-- /.container -->';
 }

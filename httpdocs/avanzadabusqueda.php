@@ -95,7 +95,7 @@ while($filasObtenidas=mysql_fetch_array($paqueteRecibido)){
                                         <figure class="type" title="Apartment"><img src="assets/img/property-types/apartment.png"  alt=""></figure>
                                         <div class="overlay">
                                             <div class="info">
-                                                <div class="tag price">'.$datosImagenes[8][$j].'</div>
+                                                <div class="tag price">'.'$ '.number_format($datosImagenes[8][$j]).'</div>
                                             </div>
                                         </div>
                                         <img alt="" src="'.$datosImagenes[0][$j].'">
@@ -111,7 +111,7 @@ while($filasObtenidas=mysql_fetch_array($paqueteRecibido)){
                                         <dt>Estado:</dt>
                                         <dd>'.$datosImagenes[10][$j].'</dd>
                                         <dt>Area:</dt>
-                                        <dd>'.$datosImagenes[11][$j].'<sup>2</sup></dd>
+                                        <dd>'.$datosImagenes[11][$j].' m<sup>2</sup></dd>
                                         <dt>Alcobas:</dt>
                                         <dd>'.$datosImagenes[12][$j].'</dd>
                                         <dt>Baños:</dt>

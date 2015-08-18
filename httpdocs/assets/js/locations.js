@@ -1,4 +1,5 @@
 var locations = [
+    ['Direccion x', "Ciudad x", "ni idea", 7.1243483, -73.1103101, "property-detail.html", "assets/img/properties/property-01.jpg", "assets/img/property-types/apartment.png"],
     ['2479 Murphy Court', "Minneapolis, MN 55402", "$36,000", 48.87, 2.29, "property-detail.html", "assets/img/properties/property-01.jpg", "assets/img/property-types/apartment.png"],
     ['3398 Lodgeville Road', "Golden Valley, MN 55427", "$28,000", 48.866876, 2.309639, "property-detail.html", "assets/img/properties/property-02.jpg", "assets/img/property-types/apartment.png"],
 
